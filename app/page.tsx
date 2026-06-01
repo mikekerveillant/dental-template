@@ -30,8 +30,10 @@ export default function DentalClinicTemplate() {
           </div>
           <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
             <a href="#services">Services</a>
+            <a href="#dentists">Dentists</a>
             <a href="#results">Results</a>
             <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
           </nav>
           <a href="#contact">
@@ -140,6 +142,41 @@ export default function DentalClinicTemplate() {
             ))}
           </div>
         </section>
+
+<section id="dentists" className="bg-white py-20">
+  <div className="mx-auto max-w-7xl px-5">
+    <div className="text-center">
+      <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-600">
+        Our Dentists
+      </p>
+      <h2 className="mt-3 text-3xl font-bold md:text-5xl">
+        Meet the dental team
+      </h2>
+      <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+        Experienced dentists focused on comfort, clear communication, and modern care.
+      </p>
+    </div>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-3">
+      {doctors.map((doctor) => (
+        <Card key={doctor.name} className="overflow-hidden rounded-3xl border-0 shadow-sm">
+          <img
+            src={doctor.image}
+            alt={doctor.name}
+            className="h-72 w-full object-cover"
+          />
+          <CardContent className="p-6">
+            <h3 className="text-xl font-bold">{doctor.name}</h3>
+            <p className="mt-1 font-medium text-sky-600">{doctor.title}</p>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              {doctor.bio}
+            </p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
         <section id="results" className="bg-slate-950 py-20 text-white">
           <div className="mx-auto max-w-7xl px-5">
