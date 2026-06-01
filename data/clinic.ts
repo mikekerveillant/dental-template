@@ -1,9 +1,9 @@
 export const clinic = {
-  name: "BrightSmile Dental Clinic",
-  tagline: "Modern dental care for confident smiles.",
+  name: "Parañaque Smile Center",
+  tagline: "Modern family dentistry in Better Living.",
   location: "Better Living, Parañaque",
-  phone: "09170000000",
-  whatsapp: "https://wa.me/639170000000",
+  phone: "0917 123 4567",
+  whatsapp: "https://wa.me/639171234567",
   rating: "4.9",
-  reviews: "180+",
+  reviews: "187+",
 };

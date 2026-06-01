@@ -108,9 +108,16 @@ export default function DentalClinicTemplate() {
                 Replace this copy with the clinic’s main offer. Highlight friendly dentists, painless treatments, flexible payments, and easy appointment booking.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button size="lg" className="rounded-full bg-sky-600 px-7 hover:bg-sky-700">
-                  <MessageCircle className="mr-2 h-5 w-5" /> Message on WhatsApp
-                </Button>
+                <a
+  href={clinic.whatsapp}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button size="lg" className="rounded-full bg-sky-600 px-7 hover:bg-sky-700">
+    <MessageCircle className="mr-2 h-5 w-5" />
+    Message on WhatsApp
+  </Button>
+</a>
                 <Button size="lg" variant="outline" className="rounded-full px-7">
                   View Services
                 </Button>
