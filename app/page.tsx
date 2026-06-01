@@ -1,20 +1,46 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Phone, Star, Smile, ShieldCheck, Sparkles, Clock, CheckCircle2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { clinic } from "@/data/clinic";
-
+const clinic = {
+  name: "BrightSmile Dental Clinic",
+  tagline: "Modern dental care for confident smiles.",
+  location: "Better Living, Parañaque",
+  phone: "0917 000 0000",
+  whatsapp: "https://wa.me/639170000000",
+  rating: "4.9",
+  reviews: "180+",
+};
 
 const services = [
-  "General Dentistry",
-  "Teeth Cleaning",
-  "Teeth Whitening",
-  "Braces & Aligners",
-  "Dental Implants",
-  "Veneers",
+  {
+    title: "General Dentistry",
+    href: "#contact",
+  },
+  {
+    title: "Teeth Cleaning",
+    href: "#contact",
+  },
+  {
+    title: "Teeth Whitening",
+    href: "/teeth-whitening-paranaque",
+  },
+  {
+    title: "Braces & Aligners",
+    href: "/braces-paranaque",
+  },
+  {
+    title: "Dental Implants",
+    href: "/dental-implants-paranaque",
+  },
+  {
+    title: "Veneers",
+    href: "/veneers-paranaque",
+  },
 ];
 
 const treatments = [
@@ -88,9 +114,11 @@ export default function DentalClinicTemplate() {
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
           </nav>
-          <Button className="rounded-full bg-sky-600 px-5 hover:bg-sky-700">
-            <Calendar className="mr-2 h-4 w-4" /> Book Now
-          </Button>
+          <a href="#contact">
+            <Button className="rounded-full bg-sky-600 px-5 hover:bg-sky-700">
+              <Calendar className="mr-2 h-4 w-4" /> Book Now
+            </Button>
+          </a>
         </div>
       </header>
 
@@ -108,19 +136,16 @@ export default function DentalClinicTemplate() {
                 Replace this copy with the clinic’s main offer. Highlight friendly dentists, painless treatments, flexible payments, and easy appointment booking.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-  href={clinic.whatsapp}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Button size="lg" className="rounded-full bg-sky-600 px-7 hover:bg-sky-700">
-    <MessageCircle className="mr-2 h-5 w-5" />
-    Message on WhatsApp
-  </Button>
-</a>
-                <Button size="lg" variant="outline" className="rounded-full px-7">
-                  View Services
-                </Button>
+                <a href={clinic.whatsapp} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="rounded-full bg-sky-600 px-7 hover:bg-sky-700">
+                    <MessageCircle className="mr-2 h-5 w-5" /> Message on WhatsApp
+                  </Button>
+                </a>
+                <a href="#services">
+                  <Button size="lg" variant="outline" className="rounded-full px-7">
+                    View Services
+                  </Button>
+                </a>
               </div>
               <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-600">
                 <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-sky-600" /> {clinic.location}</span>
@@ -165,11 +190,15 @@ export default function DentalClinicTemplate() {
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <div key={service} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <a
+                  key={service.title}
+                  href={service.href}
+                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white hover:shadow-lg"
+                >
                   <CheckCircle2 className="h-6 w-6 text-sky-600" />
-                  <h3 className="mt-4 text-xl font-bold">{service}</h3>
+                  <h3 className="mt-4 text-xl font-bold">{service.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">Short service description goes here. Focus on comfort, results, and easy booking.</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -184,7 +213,9 @@ export default function DentalClinicTemplate() {
                   <h3 className="mt-3 text-2xl font-bold">{item.title}</h3>
                   <p className="mt-3 text-slate-600">{item.text}</p>
                   <p className="mt-6 text-xl font-bold">{item.price}</p>
-                  <Button className="mt-6 w-full rounded-full bg-slate-950 hover:bg-slate-800">Ask About This</Button>
+                  <a href="#contact">
+                    <Button className="mt-6 w-full rounded-full bg-slate-950 hover:bg-slate-800">Ask About This</Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}
@@ -268,6 +299,16 @@ export default function DentalClinicTemplate() {
           <p>Website template by Tripod Studio.</p>
         </div>
       </footer>
+
+      <a
+        href={clinic.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl transition hover:scale-105 hover:bg-green-600"
+        aria-label="Message on WhatsApp"
+      >
+        <MessageCircle className="h-7 w-7" />
+      </a>
     </div>
   );
 }
