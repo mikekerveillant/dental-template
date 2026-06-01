@@ -151,10 +151,10 @@ export default function DentalClinicTemplate() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                {[
-{ label: "Before", image: "/before.jpg" },
-{ label: "After", image: "/after.jpg" },
+{ label: "Before", image: "/before1.jpg" },
+{ label: "After", image: "/after1.jpg" },
 { label: "Clinic", image: "/clinic.jpg" },
-{ label: "Team", image: "/team.jpg" },
+{ label: "Team", image: "/dentist.jpg" },
 ].map((item) => (
 
   <div
