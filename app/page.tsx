@@ -75,14 +75,13 @@ export default function DentalClinicTemplate() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <div className="relative rounded-[2rem] bg-white p-3 shadow-2xl shadow-sky-100">
-                <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-slate-200 to-sky-100 p-6">
-                  <div className="flex h-full flex-col justify-end rounded-[1.25rem] bg-white/40 p-6 backdrop-blur-sm">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">Hero Image Placeholder</p>
-                    <p className="mt-2 text-2xl font-bold">Use a smiling patient, dentist portrait, or clean clinic interior.</p>
-                  </div>
-                </div>
-              </div>
+             <div className="relative rounded-[2rem] bg-white p-3 shadow-2xl shadow-sky-100">
+  <img
+    src="/hero.jpg"
+    alt="Dental Clinic"
+    className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+  />
+</div>
             </motion.div>
           </div>
         </section>
@@ -151,11 +150,29 @@ export default function DentalClinicTemplate() {
                 <p className="mt-5 text-slate-300">Use this section carefully for real patient results, with consent. Great for whitening, veneers, braces, and smile makeovers.</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {['Before', 'After', 'Clinic', 'Team'].map((label) => (
-                  <div key={label} className="flex aspect-square items-end rounded-3xl bg-gradient-to-br from-slate-700 to-slate-800 p-5">
-                    <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur">{label}</span>
-                  </div>
-                ))}
+               {[
+{ label: "Before", image: "/before.jpg" },
+{ label: "After", image: "/after.jpg" },
+{ label: "Clinic", image: "/clinic.jpg" },
+{ label: "Team", image: "/team.jpg" },
+].map((item) => (
+
+  <div
+    key={item.label}
+    className="relative aspect-square overflow-hidden rounded-3xl"
+  >
+    <img
+      src={item.image}
+      alt={item.label}
+      className="h-full w-full object-cover"
+    />
+    <span className="absolute bottom-5 left-5 rounded-full bg-black/40 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
+      {item.label}
+    </span>
+  </div>
+))}
+
+
               </div>
             </div>
           </div>
