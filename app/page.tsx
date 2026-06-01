@@ -5,94 +5,14 @@ import { motion } from "framer-motion";
 import { Calendar, MapPin, Phone, Star, Smile, ShieldCheck, Sparkles, Clock, CheckCircle2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { clinic } from "@/data/clinic";
+import { services } from "@/data/services";
+import { reviews } from "@/data/reviews";
+import { doctors } from "@/data/doctors";
+import { treatments } from "@/data/treatments";
+import { features } from "@/data/features";
 
-const clinic = {
-  name: "BrightSmile Dental Clinic",
-  tagline: "Modern dental care for confident smiles.",
-  location: "Better Living, Parañaque",
-  phone: "0917 000 0000",
-  whatsapp: "https://wa.me/639170000000",
-  rating: "4.9",
-  reviews: "180+",
-};
 
-const services = [
-  {
-    title: "General Dentistry",
-    href: "#contact",
-  },
-  {
-    title: "Teeth Cleaning",
-    href: "#contact",
-  },
-  {
-    title: "Teeth Whitening",
-    href: "/teeth-whitening-paranaque",
-  },
-  {
-    title: "Braces & Aligners",
-    href: "/braces-paranaque",
-  },
-  {
-    title: "Dental Implants",
-    href: "/dental-implants-paranaque",
-  },
-  {
-    title: "Veneers",
-    href: "/veneers-paranaque",
-  },
-];
-
-const treatments = [
-  {
-    title: "Teeth Whitening",
-    text: "Brighten your smile safely with professional whitening treatment.",
-    price: "From ₱4,500",
-  },
-  {
-    title: "Braces & Aligners",
-    text: "Straighten your teeth with flexible payment options.",
-    price: "Consultation available",
-  },
-  {
-    title: "Veneers",
-    text: "Create a natural-looking smile transformation with custom veneers.",
-    price: "Ask for package rates",
-  },
-];
-
-const reviews = [
-  {
-    name: "Maria S.",
-    text: "Very clean clinic and friendly staff. The dentist explained everything clearly.",
-  },
-  {
-    name: "Jason D.",
-    text: "Booked through Facebook and got a quick response. Great experience overall.",
-  },
-  {
-    name: "Anne L.",
-    text: "My whitening treatment was smooth and the results looked natural.",
-  },
-];
-
-const features = [
-  {
-    Icon: ShieldCheck,
-    title: "Licensed Dentists",
-    text: "Build trust with credentials and experience.",
-  },
-  {
-    Icon: Sparkles,
-    title: "Modern Treatments",
-    text: "Highlight veneers, whitening, braces, and implants.",
-  },
-  {
-    Icon: CheckCircle2,
-    title: "Easy Booking",
-    text: "WhatsApp, Messenger, phone, or online appointment form.",
-  },
-];
 
 export default function DentalClinicTemplate() {
   return (
