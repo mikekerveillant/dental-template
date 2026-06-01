@@ -2,13 +2,23 @@ export const doctors = [
   {
     name: "Dr. Angela Reyes",
     title: "General Dentist",
-    bio: "Focused on family dentistry, preventive care, and patient comfort.",
+    specialties: [
+      "Preventive Care",
+      "Teeth Cleaning",
+      "Family Dentistry",
+    ],
+    bio: "Focused on preventive care and helping patients achieve lifelong oral health.",
     image: "/doctor-1.jpg",
   },
   {
     name: "Dr. Miguel Santos",
     title: "Cosmetic Dentist",
-    bio: "Specializes in whitening, veneers, smile design, and cosmetic treatments.",
+    specialties: [
+      "Whitening",
+      "Veneers",
+      "Smile Makeovers",
+    ],
+    bio: "Passionate about cosmetic dentistry and creating natural-looking smiles.",
     image: "/doctor-2.jpg",
   },
 ];

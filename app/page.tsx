@@ -11,7 +11,7 @@ import { reviews } from "@/data/reviews";
 import { doctors } from "@/data/doctors";
 import { treatments } from "@/data/treatments";
 import { features } from "@/data/features";
-
+import { faq } from "@/data/faq";
 
 
 export default function DentalClinicTemplate() {
@@ -182,6 +182,31 @@ export default function DentalClinicTemplate() {
             </div>
           </div>
         </section>
+
+<section id="faq" className="bg-slate-50 py-20">
+  <div className="mx-auto max-w-4xl px-5">
+    <div className="text-center">
+      <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-600">
+        FAQ
+      </p>
+      <h2 className="mt-3 text-3xl font-bold md:text-5xl">
+        Common questions
+      </h2>
+    </div>
+
+    <div className="mt-10 space-y-4">
+      {faq.map((item) => (
+        <div
+          key={item.question}
+          className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+        >
+          <h3 className="text-lg font-bold">{item.question}</h3>
+          <p className="mt-3 text-slate-600">{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
         <section id="contact" className="mx-auto max-w-7xl px-5 py-20">
           <div className="grid overflow-hidden rounded-[2rem] bg-sky-600 text-white shadow-xl md:grid-cols-2">
